@@ -1,5 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
 
 class SimpleSyntheticDataset():
     def __init__(self, num_samples_train=100, num_samples_test=100, class_balance=0.5,
