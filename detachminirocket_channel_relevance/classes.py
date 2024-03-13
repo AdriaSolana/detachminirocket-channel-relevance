@@ -4,14 +4,9 @@ from abc import ABC, abstractmethod
 from sklearn.base import TransformerMixin, BaseEstimator
 from sklearn.exceptions import NotFittedError
 from sklearn.linear_model import RidgeClassifierCV, RidgeClassifier, LogisticRegressionCV
-from sklearn.metrics import accuracy_score
 from sklearn.model_selection import StratifiedShuffleSplit, train_test_split
 from sklearn.preprocessing import StandardScaler, OrdinalEncoder
-from detach_rocket.utils import *
-from tsai.data.external import *
-from tsai.models.layers import *
-from tsai.data.all import *
-from tsai.models.utils import *
+from detach_rocket.utils import feature_detachment, select_optimal_model, retrain_optimal_model
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -20,10 +15,9 @@ from scipy.stats import entropy, rv_discrete
 from scipy.linalg import LinAlgWarning
 from collections import Counter
 from aeon.datasets import load_classification
-import random
 import copy
 import matplotlib.pyplot as plt
-
+import random
 
 warnings.filterwarnings("ignore", category=FutureWarning)
 warnings.filterwarnings("ignore", category=LinAlgWarning)
