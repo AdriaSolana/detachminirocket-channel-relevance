@@ -1,3 +1,6 @@
 venv
 notebooks
 pyproject.toml
+dist
+build
+detachminirocket_channel_relevance.egg-info
